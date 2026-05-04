@@ -1,2 +1,2 @@
 # retra
-Official website for RETRA
+Official website for ЯETRA
