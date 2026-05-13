@@ -3,50 +3,186 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>特定商取引法に基づく表記 | RETRA</title>
+<title>特定商取引法に基づく表記 | ЯETRA</title>
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    background:#050505;
+    color:#f5f5f7;
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
+}
+
+main{
+    width:min(1080px,100%);
+    margin:0 auto;
+    padding:100px 24px 120px;
+}
+
+.logo{
+    font-size:22px;
+    letter-spacing:.16em;
+    margin-bottom:52px;
+}
+
+h1{
+    font-size:52px;
+    font-weight:250;
+    letter-spacing:-.06em;
+    margin:0 0 22px;
+}
+
+.lead{
+    color:rgba(255,255,255,.58);
+    line-height:1.9;
+    margin-bottom:70px;
+}
+
+.table{
+    border-radius:34px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.08);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.06),
+            rgba(255,255,255,.02)
+        );
+}
+
+.row{
+    display:grid;
+    grid-template-columns:260px 1fr;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.row:last-child{
+    border-bottom:none;
+}
+
+.label{
+    padding:28px 30px;
+    background:rgba(255,255,255,.03);
+    color:rgba(255,255,255,.92);
+    font-size:14px;
+    font-weight:500;
+}
+
+.value{
+    padding:28px 30px;
+    color:rgba(255,255,255,.68);
+    line-height:2;
+    font-size:14px;
+}
+
+.footer{
+    margin-top:60px;
+    font-size:13px;
+    color:rgba(255,255,255,.42);
+}
+
+a{
+    color:#fff;
+    text-decoration:none;
+}
+
+@media(max-width:720px){
+
+    h1{
+        font-size:40px;
+    }
+
+    .row{
+        grid-template-columns:1fr;
+    }
+
+    .label{
+        padding-bottom:10px;
+    }
+
+    .value{
+        padding-top:0;
+    }
+}
+</style>
 </head>
-<body style="background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;line-height:1.8;padding:40px;max-width:880px;margin:auto;">
+<body>
 
-<h1>特定商取引法に基づく表記</h1>
+<main>
 
-<h2>販売事業者</h2>
-<p>ЯETRA TOKYO</p>
+    <div class="logo">ЯETRA</div>
 
-<h2>運営責任者</h2>
-<p>ЯETRA TOKYO</p>
+    <h1>特定商取引法に基づく表記</h1>
 
-<h2>所在地</h2>
-<p>請求があった場合、遅滞なく開示いたします。</p>
+    <p class="lead">
+        ЯETRAに関する販売情報を、
+        特定商取引法に基づき表示しています。
+    </p>
 
-<h2>お問い合わせ先</h2>
-<p>support@retra.tokyo</p>
+    <div class="table">
 
-<h2>販売価格</h2>
-<p>アプリ内に表示される価格に準じます。</p>
-<p>Basic：月額980円</p>
-<p>Pro：月額1,980円</p>
+        <div class="row">
+            <div class="label">販売事業者</div>
+            <div class="value">
+                ЯETRA TOKYO
+            </div>
+        </div>
 
-<h2>商品代金以外の必要料金</h2>
-<p>インターネット接続に必要な通信料はユーザーの負担となります。</p>
+        <div class="row">
+            <div class="label">運営責任者</div>
+            <div class="value">
+                HiROYUKI
+            </div>
+        </div>
 
-<h2>支払方法</h2>
-<p>AppleのApp Store決済によります。</p>
+        <div class="row">
+            <div class="label">お問い合わせ先</div>
+            <div class="value">
+                contact@retra.tokyo
+            </div>
+        </div>
 
-<h2>サービス提供時期</h2>
-<p>購入手続き完了後、直ちに利用可能となります。</p>
+        <div class="row">
+            <div class="label">販売価格</div>
+            <div class="value">
+                各商品ページに表示された価格に基づきます。
+            </div>
+        </div>
 
-<h2>返品・キャンセルについて</h2>
-<p>デジタルコンテンツの性質上、購入後の返品・キャンセルはできません。</p>
-<p>返金についてはAppleの規定に従います。</p>
+        <div class="row">
+            <div class="label">支払い方法</div>
+            <div class="value">
+                クレジットカード、
+                Apple Pay、
+                Google Pay、
+                その他対応決済
+            </div>
+        </div>
 
-<h2>サブスクリプションについて</h2>
-<p>BasicおよびProは自動更新サブスクリプションです。</p>
-<p>解約は、ユーザー自身がApp Storeのサブスクリプション管理画面から行う必要があります。</p>
-<p>現在の期間終了の24時間以上前に解約しない限り、自動的に更新されます。</p>
+        <div class="row">
+            <div class="label">商品の引渡時期</div>
+            <div class="value">
+                決済確認後、
+                順次発送いたします。
+            </div>
+        </div>
 
-<h2>動作環境</h2>
-<p>対応するiPhone、iOS環境、およびЯETRA対応デバイスが必要です。</p>
+        <div class="row">
+            <div class="label">返品・キャンセル</div>
+            <div class="value">
+                初期不良を除き、
+                原則として返品・交換は受け付けておりません。
+            </div>
+        </div>
 
-<p>制定日：2026年4月25日</p>
+    </div>
+
+    <div class="footer">
+        © 2026 ЯETRA TOKYO
+    </div>
+
+</main>
+
 </body>
 </html>
