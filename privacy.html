@@ -6,33 +6,86 @@
 <title>Privacy Policy | ЯETRA</title>
 <style>
 *{box-sizing:border-box}
+
 body{
     margin:0;
     background:#050505;
     color:#f5f5f7;
     font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
 }
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:18px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    z-index:50;
+    background:rgba(5,5,5,.58);
+    backdrop-filter:blur(30px);
+    border-bottom:1px solid rgba(255,255,255,.055);
+}
+
+.logo{
+    font-size:20px;
+    font-weight:500;
+    letter-spacing:.16em;
+    color:rgba(255,255,255,.92);
+    text-decoration:none;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+nav a{
+    color:rgba(255,255,255,.68);
+    text-decoration:none;
+    font-size:12px;
+}
+
+.nav-buy{
+    padding:8px 14px;
+    border-radius:999px;
+    background:rgba(255,255,255,.92);
+    color:#000!important;
+}
+
+.lang-toggle{
+    border:1px solid rgba(255,255,255,.16);
+    background:rgba(255,255,255,.055);
+    color:rgba(255,255,255,.78);
+    border-radius:999px;
+    padding:8px 12px;
+    font-size:11px;
+    cursor:pointer;
+    font-family:inherit;
+}
+
 main{
     width:min(980px,100%);
     margin:0 auto;
-    padding:100px 24px 120px;
+    padding:140px 24px 120px;
 }
-.logo{
-    font-size:22px;
-    letter-spacing:.16em;
-    margin-bottom:52px;
-}
+
 h1{
     font-size:52px;
     font-weight:250;
     letter-spacing:-.06em;
     margin:0 0 20px;
 }
+
 .lead{
     color:rgba(255,255,255,.58);
     line-height:1.9;
     margin-bottom:70px;
 }
+
 .section{
     margin-bottom:56px;
     padding:36px;
@@ -40,85 +93,127 @@ h1{
     background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
     border:1px solid rgba(255,255,255,.08);
 }
+
 .section h2{
     margin:0 0 18px;
     font-size:24px;
     font-weight:500;
 }
+
 .section p{
     margin:0;
     line-height:2;
     color:rgba(255,255,255,.68);
 }
+
 .footer{
     margin-top:60px;
     font-size:13px;
     color:rgba(255,255,255,.42);
 }
+
 a{
     color:#fff;
     text-decoration:none;
 }
-@media(max-width:640px){
-    h1{
-        font-size:40px;
-    }
 
-    .section{
-        padding:28px;
-    }
+.back{
+    display:inline-block;
+    margin-top:22px;
+    color:rgba(255,255,255,.58);
+}
+
+@media(max-width:640px){
+    header{padding:16px 5%}
+    nav{gap:8px}
+    nav a{font-size:10px}
+    .nav-buy{padding:7px 10px}
+    .lang-toggle{padding:7px 9px;font-size:10px}
+    h1{font-size:40px}
+    .section{padding:28px}
 }
 </style>
 </head>
 <body>
 
+<header>
+    <a class="logo" href="index.html">ЯETRA</a>
+    <nav>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="tokushoho.html">Legal</a>
+        <a class="nav-buy" href="index.html#buy" data-ja="購入する" data-en="Buy">購入する</a>
+        <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+    </nav>
+</header>
+
 <main>
-
-    <div class="logo">ЯETRA</div>
-
     <h1>Privacy Policy</h1>
 
-    <p class="lead">
+    <p class="lead" data-ja="ЯETRAは、ユーザーのプライバシーを尊重し、個人情報を適切に保護・管理します。" data-en="ЯETRA respects user privacy and manages personal information appropriately.">
         ЯETRAは、ユーザーのプライバシーを尊重し、
         個人情報を適切に保護・管理します。
     </p>
 
     <section class="section">
-        <h2>取得する情報</h2>
-        <p>
+        <h2 data-ja="取得する情報" data-en="Information We Collect">取得する情報</h2>
+        <p data-ja="ЯETRAでは、アカウント情報、端末情報、利用状況、購入情報などを取得する場合があります。" data-en="ЯETRA may collect account information, device information, usage data, and purchase information.">
             ЯETRAでは、アカウント情報、端末情報、
             利用状況、購入情報などを取得する場合があります。
         </p>
     </section>
 
     <section class="section">
-        <h2>利用目的</h2>
-        <p>
+        <h2 data-ja="利用目的" data-en="Purpose of Use">利用目的</h2>
+        <p data-ja="サービス提供、サポート対応、機能改善、不正利用防止のために利用します。" data-en="We use this information to provide services, support users, improve features, and prevent unauthorized use.">
             サービス提供、サポート対応、
             機能改善、不正利用防止のために利用します。
         </p>
     </section>
 
     <section class="section">
-        <h2>第三者提供</h2>
-        <p>
+        <h2 data-ja="第三者提供" data-en="Third-Party Disclosure">第三者提供</h2>
+        <p data-ja="法令に基づく場合を除き、ユーザーの同意なく第三者へ提供しません。" data-en="We do not provide personal information to third parties without user consent, except as required by law.">
             法令に基づく場合を除き、
             ユーザーの同意なく第三者へ提供しません。
         </p>
     </section>
 
     <section class="section">
-        <h2>お問い合わせ</h2>
-        <p>
-            contact@retra.tokyo
-        </p>
+        <h2 data-ja="お問い合わせ" data-en="Contact">お問い合わせ</h2>
+        <p>contact@retra.tokyo</p>
     </section>
 
     <div class="footer">
         © 2026 ЯETRA TOKYO
+        <br>
+        <a class="back" href="index.html" data-ja="ЯETRAトップへ戻る" data-en="Back to ЯETRA">ЯETRAトップへ戻る</a>
     </div>
-
 </main>
+
+<script>
+const applyLanguage = (lang) => {
+    document.documentElement.lang = lang;
+    localStorage.setItem("retraLanguage", lang);
+
+    document.querySelectorAll("[data-ja][data-en]").forEach((element) => {
+        element.innerHTML = element.dataset[lang];
+    });
+
+    document.querySelectorAll("[data-lang-toggle]").forEach((button) => {
+        button.textContent = lang === "ja" ? "EN" : "JP";
+    });
+};
+
+document.querySelectorAll("[data-lang-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+        const current = localStorage.getItem("retraLanguage") || "ja";
+        applyLanguage(current === "ja" ? "en" : "ja");
+    });
+});
+
+applyLanguage(localStorage.getItem("retraLanguage") || "ja");
+</script>
 
 </body>
 </html>
