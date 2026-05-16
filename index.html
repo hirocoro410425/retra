@@ -30,60 +30,106 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 16px 7%;
-    display: flex;
+    padding: 18px 6%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
     z-index: 50;
-    background: rgba(245,245,247,0.54);
-    backdrop-filter: blur(26px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    background: rgba(5,5,5,0.72);
+    backdrop-filter: blur(28px);
+    border-bottom: 1px solid rgba(255,255,255,0.09);
 }
 
-.logo {
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    color: rgba(0,0,0,0.84);
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-logo img {
+    height: 24px;
+    width: auto;
+    display: block;
+}
+
+.header-logo span {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.95);
 }
 
 nav {
     display: flex;
     align-items: center;
-    gap: 24px;
+    justify-content: center;
+    gap: 30px;
 }
 
 nav a {
-    color: rgba(0,0,0,0.68);
+    color: rgba(255,255,255,0.74);
     text-decoration: none;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
 }
 
 nav a:hover {
-    color: rgba(0,0,0,0.96);
+    color: rgba(255,255,255,1);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.lang-switch {
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: rgba(255,255,255,0.06);
+}
+
+.lang-switch button {
+    border: none;
+    border-radius: 999px;
+    padding: 6px 10px;
+    background: transparent;
+    color: rgba(255,255,255,0.58);
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.lang-switch button.active {
+    background: rgba(255,255,255,0.92);
+    color: #000;
 }
 
 .nav-buy {
-    padding: 7px 12px;
+    padding: 8px 14px;
     border-radius: 999px;
-    background: rgba(255,255,255,0.78);
+    background: rgba(255,255,255,0.92);
     color: #000 !important;
-    border: 1px solid rgba(0,0,0,0.08);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
 }
 
 .hero {
-    min-height: 76vh;
-    padding: 94px 7% 46px;
+    min-height: 82vh;
+    padding: 110px 6% 58px;
     display: grid;
-    grid-template-columns: 0.86fr 1.14fr;
-    gap: 26px;
+    grid-template-columns: 0.88fr 1.12fr;
+    gap: 36px;
     align-items: center;
     background:
-        radial-gradient(circle at 78% 22%, rgba(255,255,255,0.95), transparent 25%),
-        radial-gradient(circle at 68% 42%, rgba(190,196,202,0.48), transparent 32%),
-        linear-gradient(118deg, #11161a 0%, #d7dadd 57%, #f7f7f7 100%);
-    color: #111;
+        radial-gradient(circle at 82% 24%, rgba(255,255,255,0.36), transparent 26%),
+        radial-gradient(circle at 68% 52%, rgba(130,136,142,0.22), transparent 34%),
+        linear-gradient(120deg, #050505 0%, #1a1b1c 40%, #6b6b69 100%);
     overflow: hidden;
 }
 
@@ -93,178 +139,84 @@ nav a:hover {
 }
 
 .eyebrow {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.42em;
-    color: rgba(255,255,255,0.74);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.38em;
+    color: rgba(255,255,255,0.58);
     text-transform: uppercase;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 .hero h1 {
     margin: 0;
-    font-size: clamp(42px, 5vw, 76px);
-    line-height: 1.08;
+    font-size: clamp(48px, 6.2vw, 94px);
+    line-height: 1.04;
     font-weight: 300;
-    letter-spacing: -0.07em;
-    color: rgba(255,255,255,0.94);
+    letter-spacing: -0.075em;
+    color: rgba(255,255,255,0.96);
 }
 
 .lead {
-    margin: 24px 0 0;
-    max-width: 500px;
+    margin: 26px 0 0;
+    max-width: 560px;
     color: rgba(255,255,255,0.72);
-    font-size: 15px;
-    line-height: 1.9;
-    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.95;
+    font-weight: 400;
 }
 
 .cta {
     display: flex;
     gap: 12px;
-    margin-top: 26px;
+    margin-top: 30px;
     flex-wrap: wrap;
 }
 
 .cta a {
     text-decoration: none;
     border-radius: 999px;
-    padding: 10px 17px;
-    font-size: 12px;
-    font-weight: 600;
+    padding: 11px 19px;
+    font-size: 13px;
+    font-weight: 700;
 }
 
 .primary {
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.92);
     color: #000;
-}
-
-.secondary {
-    color: rgba(255,255,255,0.86);
-    border: 1px solid rgba(255,255,255,0.2);
-    background: rgba(255,255,255,0.08);
 }
 
 .hero-visual {
     position: relative;
-    min-height: 520px;
+    min-height: 560px;
 }
 
-.mock-phone {
+.hero-product-image {
     position: absolute;
-    right: 3%;
-    top: 4%;
-    width: 294px;
-    height: 560px;
-    border-radius: 50px;
-    background: #050505;
-    border: 1px solid rgba(0,0,0,0.22);
-    box-shadow:
-        0 42px 90px rgba(0,0,0,0.32),
-        inset 0 0 0 8px rgba(255,255,255,0.06);
-    overflow: hidden;
-    transform: rotate(4deg);
-    z-index: 4;
+    right: 0;
+    top: 50%;
+    width: min(620px, 100%);
+    transform: translateY(-50%);
+    filter: drop-shadow(0 50px 90px rgba(0,0,0,0.55));
 }
 
-.mock-phone::before {
-    content: "";
-    position: absolute;
-    top: 15px;
-    left: 50%;
-    width: 90px;
-    height: 25px;
-    border-radius: 999px;
-    background: #000;
-    transform: translateX(-50%);
-    z-index: 5;
-}
-
-.mock-photo {
-    position: absolute;
-    inset: 17px;
-    border-radius: 38px;
-    background:
-        linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0.58)),
-        url("retra-shot.jpg");
-    background-size: cover;
-    background-position: center;
-}
-
-.mock-ui {
-    position: absolute;
-    left: 28px;
-    right: 28px;
-    bottom: 34px;
-    height: 78px;
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    gap: 16px;
-}
-
-.shutter {
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    border: 4px solid rgba(255,255,255,0.88);
-    background: rgba(255,255,255,0.16);
-}
-
-.mode-pill {
-    position: absolute;
-    bottom: -4px;
-    padding: 7px 14px;
-    border-radius: 999px;
-    background: rgba(0,0,0,0.5);
-    color: #f4d24f;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.mock-retra {
-    position: absolute;
-    left: 12%;
-    top: 32%;
-    width: 178px;
-    height: 248px;
-    border-radius: 36px;
-    background:
-        radial-gradient(circle at 50% 28%, rgba(255,255,255,0.12), transparent 18%),
-        linear-gradient(145deg, #151515, #030303 76%);
-    border: 1px solid rgba(255,255,255,0.24);
-    box-shadow:
-        inset 0 0 38px rgba(255,255,255,0.04),
-        0 34px 74px rgba(0,0,0,0.36);
-    z-index: 5;
-}
-
-.mock-retra::before {
-    content: "ЯETRA";
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255,255,255,0.88);
-    font-size: 18px;
-    font-weight: 400;
-    letter-spacing: 0.12em;
+.hero-product-image img {
+    width: 100%;
+    display: block;
 }
 
 .feature-strip {
+    padding: 64px 8% 58px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    background:
-        linear-gradient(180deg, #1a1d20 0%, #0a0b0c 100%);
-    border-top: 1px solid rgba(255,255,255,0.08);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    gap: 0;
+    background: #666665;
+    color: #fff;
 }
 
 .feature-item {
-    padding: 30px 32px 32px;
-    min-height: 156px;
-    border-right: 1px solid rgba(255,255,255,0.1);
+    padding: 0 42px;
+    min-height: 230px;
+    border-right: 2px solid rgba(255,255,255,0.52);
 }
 
 .feature-item:last-child {
@@ -272,68 +224,109 @@ nav a:hover {
 }
 
 .feature-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    border: 2px solid rgba(255,255,255,0.76);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 16px;
-    font-size: 20px;
+    height: 74px;
+    margin-bottom: 22px;
+}
+
+.feature-icon img {
+    height: 74px;
+    width: auto;
+    display: block;
 }
 
 .feature-item h3 {
-    margin: 0 0 10px;
-    font-size: 15px;
-    font-weight: 600;
+    margin: 0 0 24px;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.04em;
 }
 
 .feature-item p {
     margin: 0;
-    color: rgba(255,255,255,0.56);
-    font-size: 12px;
+    color: rgba(255,255,255,0.9);
+    font-size: 17px;
     line-height: 1.75;
+    font-weight: 500;
 }
 
-.badge-area {
-    padding: 18px 0;
+.spec-strip {
+    padding: 30px 0 48px;
     overflow: hidden;
-    background: #050505;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: #666665;
+    border-top: 1px solid rgba(255,255,255,0.12);
 }
 
-.badge-track {
+.spec-track {
     display: flex;
-    gap: 9px;
+    gap: 22px;
     width: max-content;
-    padding-bottom: 10px;
-    animation: marquee 38s linear infinite;
+    animation: slideLeft 38s linear infinite;
 }
 
-.badge-track.reverse {
-    animation-direction: reverse;
-    padding-bottom: 0;
-}
-
-.badge {
+.spec-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 80px;
+    padding: 0 24px;
+    border-radius: 14px;
+    background: #171717;
+    border: 3px solid rgba(255,255,255,0.3);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
     white-space: nowrap;
-    padding: 8px 14px;
-    border-radius: 9px;
-    background: rgba(255,255,255,0.055);
-    border: 1px solid rgba(255,255,255,0.11);
-    color: rgba(255,255,255,0.78);
-    font-size: 12px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.4);
+}
+
+.spec-check {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 3px solid #45e63d;
+    color: #45e63d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
     line-height: 1;
 }
 
-.badge strong {
-    color: #85ff87;
-    font-weight: 700;
-    margin-right: 6px;
+.review-area {
+    padding: 36px 0;
+    overflow: hidden;
+    background: #666665;
+    border-top: 1px solid rgba(255,255,255,0.12);
 }
 
-@keyframes marquee {
+.review-track {
+    display: flex;
+    gap: 14px;
+    width: max-content;
+    padding-bottom: 18px;
+    animation: slideLeft 42s linear infinite;
+}
+
+.review-track.reverse {
+    animation-name: slideRight;
+    padding-bottom: 0;
+}
+
+.review-card {
+    min-width: 420px;
+    padding: 18px 24px;
+    border-radius: 14px;
+    background: #191919;
+    border: 3px solid rgba(255,255,255,0.16);
+    color: rgba(255,255,255,0.96);
+    font-size: 20px;
+    line-height: 1.65;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+@keyframes slideLeft {
     from {
         transform: translateX(0);
     }
@@ -342,13 +335,22 @@ nav a:hover {
     }
 }
 
+@keyframes slideRight {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
 .how {
-    min-height: 82vh;
+    min-height: 86vh;
     display: grid;
-    grid-template-columns: 0.78fr 1.22fr;
+    grid-template-columns: 0.82fr 1.18fr;
     align-items: center;
-    gap: 28px;
-    padding: 72px 7%;
+    gap: 34px;
+    padding: 86px 6%;
     background:
         radial-gradient(circle at 72% 42%, rgba(255,255,255,0.12), transparent 30%),
         linear-gradient(180deg, #050505 0%, #000 100%);
@@ -362,8 +364,8 @@ nav a:hover {
 }
 
 .section-label {
-    font-size: 11px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 700;
     letter-spacing: 0.36em;
     color: rgba(255,255,255,0.48);
     text-transform: uppercase;
@@ -371,87 +373,68 @@ nav a:hover {
 }
 
 .how h2 {
-    margin: 0 0 28px;
-    font-size: clamp(34px, 4vw, 58px);
-    line-height: 1.14;
+    margin: 0 0 30px;
+    font-size: clamp(36px, 4.8vw, 72px);
+    line-height: 1.08;
     font-weight: 350;
-    letter-spacing: -0.06em;
+    letter-spacing: -0.065em;
 }
 
 .steps {
     display: grid;
-    gap: 20px;
+    gap: 22px;
 }
 
 .step {
     display: grid;
-    grid-template-columns: 38px 1fr;
+    grid-template-columns: 40px 1fr;
     gap: 18px;
 }
 
 .step-number {
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: rgba(255,255,255,0.94);
     color: #111;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 13px;
 }
 
 .step h3 {
     margin: 0 0 7px;
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .step p {
     margin: 0;
-    color: rgba(255,255,255,0.62);
+    color: rgba(255,255,255,0.64);
     line-height: 1.75;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .how-visual {
     position: relative;
-    min-height: 610px;
+    min-height: 620px;
 }
 
-.big-phone {
+.how-visual img {
     position: absolute;
-    right: 0;
-    top: 2%;
-    width: 560px;
-    height: 660px;
-    border-radius: 62px;
-    background:
-        linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.02)),
-        #171717;
-    box-shadow: 0 48px 100px rgba(0,0,0,0.58);
-    transform: rotate(-20deg);
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.32);
-}
-
-.big-phone::before {
-    content: "";
-    position: absolute;
-    inset: 22px;
-    border-radius: 44px;
-    background:
-        linear-gradient(180deg, transparent, rgba(0,0,0,0.46)),
-        url("retra-shot.jpg");
-    background-size: cover;
-    background-position: center;
+    right: -2%;
+    top: 50%;
+    width: min(620px, 100%);
+    transform: translateY(-50%);
+    filter: drop-shadow(0 48px 90px rgba(0,0,0,0.55));
 }
 
 .premium {
-    min-height: 82vh;
+    min-height: 86vh;
     padding: 0;
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: 1.12fr 0.88fr;
     align-items: stretch;
     background: #101010;
     border-top: 1px solid rgba(255,255,255,0.08);
@@ -461,7 +444,7 @@ nav a:hover {
     min-height: 720px;
     background:
         linear-gradient(90deg, rgba(0,0,0,0.03), rgba(0,0,0,0.44)),
-        url("retra-premium-model.jpg");
+        url("assets/image/retra.pro.girl.png");
     background-size: cover;
     background-position: center;
 }
@@ -470,13 +453,13 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 70px 12% 70px 8%;
+    padding: 76px 12% 76px 8%;
 }
 
 .premium-copy h2,
 .color-copy h2 {
     margin: 0;
-    font-size: clamp(40px, 4.8vw, 76px);
+    font-size: clamp(42px, 5vw, 82px);
     font-weight: 350;
     line-height: 1.05;
     letter-spacing: -0.06em;
@@ -486,7 +469,7 @@ nav a:hover {
     margin-top: 12px;
     color: #d8b47d;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 0.28em;
     text-transform: uppercase;
 }
@@ -501,7 +484,7 @@ nav a:hover {
 }
 
 .product-row {
-    padding: 38px 7% 48px;
+    padding: 42px 6% 52px;
     background:
         linear-gradient(180deg, #1b1b1b 0%, #090909 100%);
     border-top: 1px solid rgba(255,255,255,0.07);
@@ -559,7 +542,7 @@ nav a:hover {
 
 .product-name {
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .product-sub {
@@ -601,10 +584,10 @@ nav a:hover {
 }
 
 .color {
-    min-height: 82vh;
+    min-height: 86vh;
     padding: 0;
     display: grid;
-    grid-template-columns: 0.86fr 1.14fr;
+    grid-template-columns: 0.88fr 1.12fr;
     align-items: stretch;
     background:
         radial-gradient(circle at 84% 18%, rgba(255,236,194,0.5), transparent 30%),
@@ -616,7 +599,7 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 70px 8% 70px 12%;
+    padding: 76px 8% 76px 12%;
 }
 
 .color-copy h2 {
@@ -630,7 +613,7 @@ nav a:hover {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .color-copy p {
@@ -643,10 +626,10 @@ nav a:hover {
 }
 
 .color-photo {
-    min-height: 680px;
+    min-height: 700px;
     background:
         linear-gradient(90deg, rgba(255,255,255,0.16), rgba(255,255,255,0.08)),
-        url("retra-color-model.jpg");
+        url("assets/image/retra.color.girl.png");
     background-size: cover;
     background-position: center;
 }
@@ -684,79 +667,72 @@ nav a:hover {
 }
 
 .final {
-    min-height: 54vh;
+    min-height: 58vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 86px 7%;
+    padding: 90px 6%;
     background: #050505;
     border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 .final h2 {
     margin: 0;
-    font-size: clamp(38px, 4.8vw, 72px);
-    line-height: 1.12;
+    font-size: clamp(38px, 5vw, 78px);
+    line-height: 1.1;
     font-weight: 350;
     letter-spacing: -0.07em;
 }
 
 .final p {
     color: rgba(255,255,255,0.62);
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.9;
-    margin-top: 22px;
-}
-
-.footer-info {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    padding: 34px 7%;
-    background: #060606;
-    border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-.info-item {
-    padding: 0 28px;
-    border-right: 1px solid rgba(255,255,255,0.14);
-}
-
-.info-item:last-child {
-    border-right: none;
-}
-
-.info-item h3 {
-    margin: 0 0 8px;
-    font-size: 13px;
-    color: rgba(255,255,255,0.86);
-}
-
-.info-item p {
-    margin: 0;
-    font-size: 11px;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.44);
+    margin-top: 24px;
 }
 
 footer {
-    padding: 26px 7%;
+    padding: 52px 6%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 18px;
+    justify-content: center;
+    gap: 54px;
     flex-wrap: wrap;
     border-top: 1px solid rgba(255,255,255,0.08);
-    color: rgba(255,255,255,0.42);
-    font-size: 12px;
-    background: #050505;
+    color: rgba(255,255,255,0.92);
+    font-size: 22px;
+    font-weight: 600;
+    background: #000;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.footer-brand img {
+    width: 34px;
+    height: 34px;
+    display: block;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 34px;
 }
 
 footer a {
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.9);
     text-decoration: none;
-    margin-left: 18px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.footer-slash {
+    color: rgba(255,255,255,0.9);
 }
 
 .reveal {
@@ -770,17 +746,16 @@ footer a {
     transform: translateY(0);
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1080px) {
     header {
-        padding: 16px 6%;
+        grid-template-columns: 1fr;
+        gap: 14px;
     }
     
-    nav {
-        gap: 15px;
-    }
-    
-    nav a {
-        font-size: 11px;
+    .header-logo,
+    nav,
+    .header-actions {
+        justify-content: center;
     }
     
     .hero,
@@ -791,38 +766,37 @@ footer a {
     }
     
     .hero {
-        padding: 100px 6% 46px;
+        padding: 140px 6% 52px;
     }
     
     .hero-visual {
         min-height: 500px;
     }
     
-    .mock-phone {
-        width: 230px;
-        height: 470px;
-        right: 4%;
-    }
-    
-    .mock-retra {
-        width: 156px;
-        height: 218px;
-        left: 4%;
-        top: 34%;
+    .hero-product-image {
+        left: 50%;
+        right: auto;
+        width: min(540px, 100%);
+        transform: translate(-50%, -50%);
     }
     
     .feature-strip {
         grid-template-columns: 1fr 1fr;
+        gap: 40px 0;
+    }
+    
+    .feature-item:nth-child(2) {
+        border-right: none;
     }
     
     .how {
-        padding: 72px 6%;
+        padding: 74px 6%;
     }
     
-    .big-phone {
-        right: -16%;
-        width: 430px;
-        height: 590px;
+    .how-visual img {
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, -50%);
     }
     
     .premium-copy,
@@ -851,41 +825,28 @@ footer a {
     .product-device {
         height: 154px;
     }
-    
-    .footer-info {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .info-item {
-        padding: 0;
-        border-right: none;
-    }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 640px) {
     header {
         padding: 14px 5%;
     }
     
-    .logo {
-        font-size: 17px;
-    }
-    
     nav {
-        gap: 9px;
+        gap: 14px;
+        flex-wrap: wrap;
     }
     
     nav a {
-        font-size: 10px;
+        font-size: 11px;
     }
     
-    .nav-buy {
-        padding: 6px 9px;
+    .hero {
+        padding: 150px 5% 44px;
     }
     
     .hero h1 {
-        font-size: 43px;
+        font-size: 44px;
     }
     
     .lead {
@@ -894,11 +855,29 @@ footer a {
     
     .feature-strip {
         grid-template-columns: 1fr;
+        padding: 52px 8%;
     }
     
     .feature-item {
-        min-height: 136px;
-        padding: 26px 26px 28px;
+        min-height: auto;
+        padding: 0 0 38px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.28);
+    }
+    
+    .feature-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    
+    .review-card {
+        min-width: 320px;
+        font-size: 16px;
+    }
+    
+    .spec-badge {
+        font-size: 16px;
+        min-height: 66px;
     }
     
     .how h2,
@@ -907,19 +886,29 @@ footer a {
         font-size: 40px;
     }
     
+    .hero-visual,
+    .how-visual {
+        min-height: 430px;
+    }
+    
     .model-photo,
     .color-photo {
         min-height: 500px;
     }
     
     footer {
-        display: block;
-        line-height: 2.4;
+        gap: 22px;
+        font-size: 18px;
     }
     
     footer a {
-        margin-left: 0;
-        margin-right: 14px;
+        font-size: 17px;
+    }
+    
+    .footer-links {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
 </style>
@@ -927,14 +916,26 @@ footer a {
 <body>
 
 <header>
-    <div class="logo">ЯETRA</div>
+    <a class="header-logo" href="index.html">
+        <img src="assets/logos/retra.logo_1.png" alt="ЯETRA logo">
+        <span>ЯETRA</span>
+    </a>
+    
     <nav>
+        <a href="#features">Features</a>
+        <a href="#how">How</a>
+        <a href="#premium">Premium</a>
+        <a href="#colors">Color</a>
         <a href="support.html">Support</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="tokushoho.html">Legal</a>
-        <a class="nav-buy" href="#buy">購入する</a>
     </nav>
+    
+    <div class="header-actions">
+        <div class="lang-switch" aria-label="Language switch">
+            <button class="active" type="button">JP</button>
+            <button type="button">EN</button>
+        </div>
+        <a class="nav-buy" href="#buy">購入する</a>
+    </div>
 </header>
 
 <main>
@@ -948,67 +949,84 @@ footer a {
             </p>
             <div class="cta">
                 <a class="primary" href="#buy">購入する</a>
-                <a class="secondary" href="#how">使い方を見る</a>
             </div>
         </div>
         
         <div class="hero-visual reveal">
-            <div class="mock-phone">
-                <div class="mock-photo"></div>
-                <div class="mock-ui">
-                    <div class="shutter"></div>
-                    <div class="mode-pill">写真</div>
-                </div>
+            <div class="hero-product-image">
+                <img src="assets/image/phone.retra.png" alt="ЯETRA device preview">
             </div>
-            <div class="mock-retra"></div>
         </div>
     </section>
     
-    <section class="feature-strip">
+    <section class="feature-strip" id="features">
         <div class="feature-item reveal">
-            <div class="feature-icon">▣</div>
+            <div class="feature-icon">
+                <img src="assets/icon/icon-01.png" alt="">
+            </div>
             <h3>背面カメラのまま確認</h3>
-            <p>iPhoneの高画質な背面カメラで、自分を見ながら撮影できます。</p>
+            <p>iPhoneの背面にЯETRAを装着<br>外カメの高画質レンズで<br>美しい撮影が可能</p>
         </div>
         <div class="feature-item reveal">
-            <div class="feature-icon">◎</div>
+            <div class="feature-icon">
+                <img src="assets/icon/icon-02.png" alt="">
+            </div>
             <h3>直感的な操作</h3>
-            <p>迷わず使える、シンプルで美しい撮影体験。</p>
+            <p>迷わず使える<br>シンプル設計</p>
         </div>
         <div class="feature-item reveal">
-            <div class="feature-icon">○</div>
-            <h3>MagSafe対応</h3>
-            <p>ピタッと装着。日常の撮影に自然に馴染みます。</p>
+            <div class="feature-icon">
+                <img src="assets/icon/icon-03.png" alt="">
+            </div>
+            <h3>MagSafe 対応</h3>
+            <p>ピタッと装着、ズレずに安心<br>いつでも一緒</p>
         </div>
         <div class="feature-item reveal">
-            <div class="feature-icon">▯</div>
-            <h3>手軽に持ち歩ける</h3>
-            <p>薄く、軽く、毎日使えるガジェットとして設計。</p>
+            <div class="feature-icon">
+                <img src="assets/icon/icon-04.png" alt="">
+            </div>
+            <h3>長時間バッテリー</h3>
+            <p>独自バッテリー搭載だから<br>撮影に集中できる</p>
         </div>
     </section>
     
-    <section class="badge-area">
-        <div class="badge-track">
-            <div class="badge"><strong>✓</strong>背面カメラを活用</div>
-            <div class="badge"><strong>✓</strong>グループ撮影に便利</div>
-            <div class="badge"><strong>✓</strong>高画質セルフィー</div>
-            <div class="badge"><strong>✓</strong>MagSafe対応</div>
-            <div class="badge"><strong>✓</strong>USB-C接続</div>
-            <div class="badge"><strong>✓</strong>持ち歩きやすい薄型</div>
-            <div class="badge"><strong>✓</strong>背面カメラを活用</div>
-            <div class="badge"><strong>✓</strong>グループ撮影に便利</div>
-            <div class="badge"><strong>✓</strong>高画質セルフィー</div>
-            <div class="badge"><strong>✓</strong>MagSafe対応</div>
+    <section class="spec-strip">
+        <div class="spec-track">
+            <div class="spec-badge"><span class="spec-check">✓</span>薄型・軽量設計</div>
+            <div class="spec-badge"><span class="spec-check">✓</span>アルミニウム合金ボディ</div>
+            <div class="spec-badge"><span class="spec-check">✓</span>高性能 OLED ディスプレイ</div>
+            <div class="spec-badge"><span class="spec-check">✓</span>iOS アプリと連携</div>
+            <div class="spec-badge"><span class="spec-check">✓</span>OTA アップデート対応</div>
+            <div class="spec-badge"><span class="spec-check">✓</span>専用アプリで簡単操作</div>
+            <div class="spec-badge"><span class="spec-check">✓</span>薄型・軽量設計</div>
+            <div class="spec-badge"><span class="spec-check">✓</span>アルミニウム合金ボディ</div>
+            <div class="spec-badge"><span class="spec-check">✓</span>高性能 OLED ディスプレイ</div>
+            <div class="spec-badge"><span class="spec-check">✓</span>iOS アプリと連携</div>
+            <div class="spec-badge"><span class="spec-check">✓</span>OTA アップデート対応</div>
+            <div class="spec-badge"><span class="spec-check">✓</span>専用アプリで簡単操作</div>
         </div>
-        <div class="badge-track reverse">
-            <div class="badge">旅行でもSNSでも構図を確認</div>
-            <div class="badge">自撮りの画質をもっと自然に</div>
-            <div class="badge">背面レンズの映像をリアルタイム表示</div>
-            <div class="badge">撮る前に自分の表情を確認</div>
-            <div class="badge">iPhone撮影の自由度を広げる</div>
-            <div class="badge">旅行でもSNSでも構図を確認</div>
-            <div class="badge">自撮りの画質をもっと自然に</div>
-            <div class="badge">背面レンズの映像をリアルタイム表示</div>
+    </section>
+    
+    <section class="review-area">
+        <div class="review-track">
+            <div class="review-card">iPhoneのカメラ撮影方法と同じなので、とても使いやすいです</div>
+            <div class="review-card">今まではインカメでしか自撮りが出来なかった、これは画期的で使いやすい！！</div>
+            <div class="review-card">背面レンズの方が高画質なので、感覚で撮っていたけど、これからはちゃんと背面撮影できる</div>
+            <div class="review-card">ありそうで無かったガジェット！！このЯETRAで撮影界隈が変わると思う！！</div>
+            <div class="review-card">ЯETRAはカバンアイテム一軍の必需品になる</div>
+            <div class="review-card">iPhoneのカメラ撮影方法と同じなので、とても使いやすいです</div>
+            <div class="review-card">今まではインカメでしか自撮りが出来なかった、これは画期的で使いやすい！！</div>
+            <div class="review-card">背面レンズの方が高画質なので、感覚で撮っていたけど、これからはちゃんと背面撮影できる</div>
+        </div>
+        <div class="review-track reverse">
+            <div class="review-card">自撮りがもっとしやすくなったから、もっとたくさん使いこなしたいーー</div>
+            <div class="review-card">もっと早くにЯETRAに出会いたかった。このガジェット、もう手放せない！！</div>
+            <div class="review-card">iPhoneの背中にジャストサイズで軽いので、ずっと装着したままでも疲れないのが良い！！</div>
+            <div class="review-card">見た目も名前も可愛いので、友達にオススメしたくなっちゃう、プレゼントにも良いかも</div>
+            <div class="review-card">インフルエンサーやVlogにもこのサイズ感は相性が良い</div>
+            <div class="review-card">自撮りがもっとしやすくなったから、もっとたくさん使いこなしたいーー</div>
+            <div class="review-card">もっと早くにЯETRAに出会いたかった。このガジェット、もう手放せない！！</div>
+            <div class="review-card">iPhoneの背中にジャストサイズで軽いので、ずっと装着したままでも疲れないのが良い！！</div>
         </div>
     </section>
     
@@ -1045,7 +1063,7 @@ footer a {
         </div>
         
         <div class="how-visual reveal">
-            <div class="big-phone"></div>
+            <img src="assets/image/phone.retra.png" alt="ЯETRA app and device connection">
         </div>
     </section>
     
@@ -1061,7 +1079,6 @@ footer a {
             </p>
             <div class="cta">
                 <a class="primary" href="#buy">購入する</a>
-                <a class="secondary" href="#colors">カラーを見る</a>
             </div>
         </div>
     </section>
@@ -1173,30 +1190,19 @@ footer a {
             </div>
         </div>
     </section>
-    
-    <section class="footer-info">
-        <div class="info-item">
-            <h3>全国配送予定</h3>
-            <p>正式販売開始後、国内配送から順次対応予定です。</p>
-        </div>
-        <div class="info-item">
-            <h3>安心のサポート</h3>
-            <p>初期不良・接続方法・使い方をメールでサポートします。</p>
-        </div>
-        <div class="info-item">
-            <h3>アプリ連携</h3>
-            <p>ЯETRAアプリと連携し、撮影体験をさらに拡張します。</p>
-        </div>
-    </section>
 </main>
 
 <footer>
-    <div>© 2026 ЯETRA TOKYO</div>
-    <div>
-        <a href="support.html">サポート</a>
-        <a href="privacy.html">プライバシーポリシー</a>
-        <a href="terms.html">利用規約</a>
-        <a href="tokushoho.html">特定商取引法</a>
+    <div class="footer-brand">
+        <span>© 2026　ЯETRA TOKYO</span>
+        <img src="assets/logos/retra.logo_10.png" alt="ЯETRA social icon">
+    </div>
+    <div class="footer-links">
+        <a href="support.html">Support</a>
+        <span class="footer-slash">/</span>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="tokushoho.html">Legal</a>
     </div>
 </footer>
 
