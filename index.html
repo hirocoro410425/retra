@@ -17,7 +17,7 @@ body {
     margin: 0;
     background: #050505;
     color: #f5f5f7;
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
     overflow-x: hidden;
 }
 
@@ -32,18 +32,20 @@ header {
     width: 100%;
     padding: 18px 6%;
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
+    gap: 34px;
     z-index: 50;
     background: rgba(5,5,5,0.72);
     backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
     border-bottom: 1px solid rgba(255,255,255,0.09);
 }
 
 .header-logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    text-decoration: none;
 }
 
 .header-logo img {
@@ -52,17 +54,10 @@ header {
     display: block;
 }
 
-.header-logo span {
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    color: rgba(255,255,255,0.95);
-}
-
 nav {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 30px;
 }
 
@@ -99,6 +94,7 @@ nav a:hover {
     padding: 6px 10px;
     background: transparent;
     color: rgba(255,255,255,0.58);
+    font-family: inherit;
     font-size: 11px;
     font-weight: 700;
     cursor: pointer;
@@ -107,16 +103,6 @@ nav a:hover {
 .lang-switch button.active {
     background: rgba(255,255,255,0.92);
     color: #000;
-}
-
-.nav-buy {
-    padding: 8px 14px;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.92);
-    color: #000 !important;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 700;
 }
 
 .hero {
@@ -249,48 +235,41 @@ nav a:hover {
     font-weight: 500;
 }
 
-.spec-strip {
-    padding: 30px 0 48px;
-    overflow: hidden;
-    background: #666665;
-    border-top: 1px solid rgba(255,255,255,0.12);
-}
-
-.spec-track {
-    display: flex;
-    gap: 22px;
-    width: max-content;
-    animation: slideLeft 38s linear infinite;
+.spec-list {
+    margin-top: 34px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    max-width: 640px;
 }
 
 .spec-badge {
     display: flex;
     align-items: center;
     gap: 12px;
-    min-height: 80px;
-    padding: 0 24px;
-    border-radius: 14px;
-    background: #171717;
-    border: 3px solid rgba(255,255,255,0.3);
+    min-height: 58px;
+    padding: 0 18px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.16);
     color: #fff;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 600;
-    white-space: nowrap;
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.4);
 }
 
 .spec-check {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
-    border: 3px solid #45e63d;
+    border: 2px solid #45e63d;
     color: #45e63d;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 900;
     line-height: 1;
+    flex: 0 0 auto;
 }
 
 .review-area {
@@ -431,19 +410,19 @@ nav a:hover {
 }
 
 .premium {
-    min-height: 86vh;
+    min-height: 92vh;
     padding: 0;
     display: grid;
-    grid-template-columns: 1.12fr 0.88fr;
+    grid-template-columns: 1.2fr 0.8fr;
     align-items: stretch;
     background: #101010;
     border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 .model-photo {
-    min-height: 720px;
+    min-height: 780px;
     background:
-        linear-gradient(90deg, rgba(0,0,0,0.03), rgba(0,0,0,0.44)),
+        linear-gradient(90deg, rgba(0,0,0,0.02), rgba(0,0,0,0.26)),
         url("assets/image/retra.pro.girl.png");
     background-size: cover;
     background-position: center;
@@ -584,10 +563,10 @@ nav a:hover {
 }
 
 .color {
-    min-height: 86vh;
+    min-height: 92vh;
     padding: 0;
     display: grid;
-    grid-template-columns: 0.88fr 1.12fr;
+    grid-template-columns: 0.8fr 1.2fr;
     align-items: stretch;
     background:
         radial-gradient(circle at 84% 18%, rgba(255,236,194,0.5), transparent 30%),
@@ -626,9 +605,9 @@ nav a:hover {
 }
 
 .color-photo {
-    min-height: 700px;
+    min-height: 780px;
     background:
-        linear-gradient(90deg, rgba(255,255,255,0.16), rgba(255,255,255,0.08)),
+        linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
         url("assets/image/retra.color.girl.png");
     background-size: cover;
     background-position: center;
@@ -701,18 +680,22 @@ footer {
     flex-wrap: wrap;
     border-top: 1px solid rgba(255,255,255,0.08);
     color: rgba(255,255,255,0.92);
-    font-size: 22px;
-    font-weight: 600;
     background: #000;
 }
 
 .footer-brand {
     display: flex;
     align-items: center;
-    gap: 13px;
+    gap: 18px;
 }
 
-.footer-brand img {
+.footer-brand-logo {
+    height: 28px;
+    width: auto;
+    display: block;
+}
+
+.footer-instagram {
     width: 34px;
     height: 34px;
     display: block;
@@ -789,6 +772,10 @@ footer a {
         border-right: none;
     }
     
+    .spec-list {
+        grid-template-columns: 1fr;
+    }
+    
     .how {
         padding: 74px 6%;
     }
@@ -806,7 +793,7 @@ footer a {
     
     .model-photo,
     .color-photo {
-        min-height: 560px;
+        min-height: 620px;
     }
     
     .products {
@@ -876,8 +863,8 @@ footer a {
     }
     
     .spec-badge {
-        font-size: 16px;
-        min-height: 66px;
+        font-size: 14px;
+        min-height: 56px;
     }
     
     .how h2,
@@ -893,12 +880,11 @@ footer a {
     
     .model-photo,
     .color-photo {
-        min-height: 500px;
+        min-height: 560px;
     }
     
     footer {
         gap: 22px;
-        font-size: 18px;
     }
     
     footer a {
@@ -917,38 +903,36 @@ footer a {
 
 <header>
     <a class="header-logo" href="index.html">
-        <img src="assets/logos/retra.logo_1.png" alt="ЯETRA logo">
-        <span>ЯETRA</span>
+        <img src="assets/logos/retra.logo_2.png" alt="ЯETRA TOKYO logo">
     </a>
     
     <nav>
-        <a href="#features">Features</a>
-        <a href="#how">How</a>
-        <a href="#premium">Premium</a>
-        <a href="#colors">Color</a>
-        <a href="support.html">Support</a>
+        <a href="#features" data-ja="Features" data-en="Features">Features</a>
+        <a href="#how" data-ja="How" data-en="How">How</a>
+        <a href="#premium" data-ja="Premium" data-en="Premium">Premium</a>
+        <a href="#colors" data-ja="Color" data-en="Color">Color</a>
+        <a href="support.html" data-ja="Support" data-en="Support">Support</a>
     </nav>
     
     <div class="header-actions">
         <div class="lang-switch" aria-label="Language switch">
-            <button class="active" type="button">JP</button>
-            <button type="button">EN</button>
+            <button class="active" type="button" data-lang-select="ja">JP</button>
+            <button type="button" data-lang-select="en">EN</button>
         </div>
-        <a class="nav-buy" href="#buy">購入する</a>
     </div>
 </header>
 
 <main>
     <section class="hero">
         <div class="hero-copy reveal">
-            <div class="eyebrow">Rear Camera First</div>
-            <h1>背面カメラが<br>これからの主役</h1>
-            <p class="lead">
+            <div class="eyebrow" data-ja="Rear Camera First" data-en="Rear Camera First">Rear Camera First</div>
+            <h1 data-ja="背面カメラが<br>これからの主役" data-en="The rear camera<br>becomes the star">背面カメラが<br>これからの主役</h1>
+            <p class="lead" data-ja="ЯETRAは、iPhoneの背面カメラをもっと自由に使うための撮影ガジェット。自分を確認しながら、高画質な写真と動画を残せます。" data-en="ЯETRA is a shooting gadget that lets you use the iPhone rear camera more freely. Check yourself in real time while capturing high-quality photos and videos.">
                 ЯETRAは、iPhoneの背面カメラをもっと自由に使うための撮影ガジェット。
                 自分を確認しながら、高画質な写真と動画を残せます。
             </p>
             <div class="cta">
-                <a class="primary" href="#buy">購入する</a>
+                <a class="primary" href="#buy" data-ja="購入する" data-en="Buy">購入する</a>
             </div>
         </div>
         
@@ -964,99 +948,95 @@ footer a {
             <div class="feature-icon">
                 <img src="assets/icon/icon-01.png" alt="">
             </div>
-            <h3>背面カメラのまま確認</h3>
-            <p>iPhoneの背面にЯETRAを装着<br>外カメの高画質レンズで<br>美しい撮影が可能</p>
+            <h3 data-ja="背面カメラのまま確認" data-en="Preview with the rear camera">背面カメラのまま確認</h3>
+            <p data-ja="iPhoneの背面にЯETRAを装着<br>外カメの高画質レンズで<br>美しい撮影が可能" data-en="Attach ЯETRA to the back of your iPhone<br>and shoot beautifully<br>with the high-quality rear lens">iPhoneの背面にЯETRAを装着<br>外カメの高画質レンズで<br>美しい撮影が可能</p>
+            
+            <div class="spec-list">
+                <div class="spec-badge"><span class="spec-check">✓</span><span data-ja="薄型・軽量設計" data-en="Thin and lightweight design">薄型・軽量設計</span></div>
+                <div class="spec-badge"><span class="spec-check">✓</span><span data-ja="アルミニウム合金ボディ" data-en="Aluminum alloy body">アルミニウム合金ボディ</span></div>
+                <div class="spec-badge"><span class="spec-check">✓</span><span data-ja="高性能 OLED ディスプレイ" data-en="High-performance OLED display">高性能 OLED ディスプレイ</span></div>
+                <div class="spec-badge"><span class="spec-check">✓</span><span data-ja="iOS アプリと連携" data-en="Works with the iOS app">iOS アプリと連携</span></div>
+                <div class="spec-badge"><span class="spec-check">✓</span><span data-ja="OTA アップデート対応" data-en="OTA update support">OTA アップデート対応</span></div>
+                <div class="spec-badge"><span class="spec-check">✓</span><span data-ja="専用アプリで簡単操作" data-en="Simple control with the dedicated app">専用アプリで簡単操作</span></div>
+            </div>
         </div>
         <div class="feature-item reveal">
             <div class="feature-icon">
                 <img src="assets/icon/icon-02.png" alt="">
             </div>
-            <h3>直感的な操作</h3>
-            <p>迷わず使える<br>シンプル設計</p>
+            <h3 data-ja="直感的な操作" data-en="Intuitive control">直感的な操作</h3>
+            <p data-ja="迷わず使える<br>シンプル設計" data-en="A simple design<br>you can use without hesitation">迷わず使える<br>シンプル設計</p>
         </div>
         <div class="feature-item reveal">
             <div class="feature-icon">
                 <img src="assets/icon/icon-03.png" alt="">
             </div>
-            <h3>MagSafe 対応</h3>
-            <p>ピタッと装着、ズレずに安心<br>いつでも一緒</p>
+            <h3 data-ja="MagSafe 対応" data-en="MagSafe compatible">MagSafe 対応</h3>
+            <p data-ja="ピタッと装着、ズレずに安心<br>いつでも一緒" data-en="Snaps on securely<br>and stays with you anytime">ピタッと装着、ズレずに安心<br>いつでも一緒</p>
         </div>
         <div class="feature-item reveal">
             <div class="feature-icon">
                 <img src="assets/icon/icon-04.png" alt="">
             </div>
-            <h3>長時間バッテリー</h3>
-            <p>独自バッテリー搭載だから<br>撮影に集中できる</p>
-        </div>
-    </section>
-    
-    <section class="spec-strip">
-        <div class="spec-track">
-            <div class="spec-badge"><span class="spec-check">✓</span>薄型・軽量設計</div>
-            <div class="spec-badge"><span class="spec-check">✓</span>アルミニウム合金ボディ</div>
-            <div class="spec-badge"><span class="spec-check">✓</span>高性能 OLED ディスプレイ</div>
-            <div class="spec-badge"><span class="spec-check">✓</span>iOS アプリと連携</div>
-            <div class="spec-badge"><span class="spec-check">✓</span>OTA アップデート対応</div>
-            <div class="spec-badge"><span class="spec-check">✓</span>専用アプリで簡単操作</div>
-            <div class="spec-badge"><span class="spec-check">✓</span>薄型・軽量設計</div>
-            <div class="spec-badge"><span class="spec-check">✓</span>アルミニウム合金ボディ</div>
-            <div class="spec-badge"><span class="spec-check">✓</span>高性能 OLED ディスプレイ</div>
-            <div class="spec-badge"><span class="spec-check">✓</span>iOS アプリと連携</div>
-            <div class="spec-badge"><span class="spec-check">✓</span>OTA アップデート対応</div>
-            <div class="spec-badge"><span class="spec-check">✓</span>専用アプリで簡単操作</div>
+            <h3 data-ja="長時間バッテリー" data-en="Long battery life">長時間バッテリー</h3>
+            <p data-ja="独自バッテリー搭載だから<br>撮影に集中できる" data-en="Built-in battery power<br>keeps you focused on shooting">独自バッテリー搭載だから<br>撮影に集中できる</p>
         </div>
     </section>
     
     <section class="review-area">
         <div class="review-track">
-            <div class="review-card">iPhoneのカメラ撮影方法と同じなので、とても使いやすいです</div>
-            <div class="review-card">今まではインカメでしか自撮りが出来なかった、これは画期的で使いやすい！！</div>
-            <div class="review-card">背面レンズの方が高画質なので、感覚で撮っていたけど、これからはちゃんと背面撮影できる</div>
-            <div class="review-card">ありそうで無かったガジェット！！このЯETRAで撮影界隈が変わると思う！！</div>
-            <div class="review-card">ЯETRAはカバンアイテム一軍の必需品になる</div>
-            <div class="review-card">iPhoneのカメラ撮影方法と同じなので、とても使いやすいです</div>
-            <div class="review-card">今まではインカメでしか自撮りが出来なかった、これは画期的で使いやすい！！</div>
-            <div class="review-card">背面レンズの方が高画質なので、感覚で撮っていたけど、これからはちゃんと背面撮影できる</div>
+            <div class="review-card" data-ja="iPhoneの背面カメラで自撮りできる安心感がすごい" data-en="The confidence of using the iPhone rear camera for selfies is amazing">iPhoneの背面カメラで自撮りできる安心感がすごい</div>
+            <div class="review-card" data-ja="インカメでは出せなかった画質で、自分を確認しながら撮れる" data-en="I can shoot with quality the front camera never gave me, while checking myself">インカメでは出せなかった画質で、自分を確認しながら撮れる</div>
+            <div class="review-card" data-ja="旅行先で友達と撮る写真の失敗がかなり減りそう" data-en="This will reduce so many failed photos with friends while traveling">旅行先で友達と撮る写真の失敗がかなり減りそう</div>
+            <div class="review-card" data-ja="動画撮影の構図確認が楽になって、Vlogに使いやすい" data-en="It makes framing videos easier, perfect for vlogging">動画撮影の構図確認が楽になって、Vlogに使いやすい</div>
+            <div class="review-card" data-ja="MagSafeで付けられるから、持ち歩きアイテムとして自然" data-en="Because it attaches with MagSafe, it feels natural to carry every day">MagSafeで付けられるから、持ち歩きアイテムとして自然</div>
+            <div class="review-card" data-ja="iPhoneの背面カメラで自撮りできる安心感がすごい" data-en="The confidence of using the iPhone rear camera for selfies is amazing">iPhoneの背面カメラで自撮りできる安心感がすごい</div>
+            <div class="review-card" data-ja="インカメでは出せなかった画質で、自分を確認しながら撮れる" data-en="I can shoot with quality the front camera never gave me, while checking myself">インカメでは出せなかった画質で、自分を確認しながら撮れる</div>
+            <div class="review-card" data-ja="旅行先で友達と撮る写真の失敗がかなり減りそう" data-en="This will reduce so many failed photos with friends while traveling">旅行先で友達と撮る写真の失敗がかなり減りそう</div>
+            <div class="review-card" data-ja="動画撮影の構図確認が楽になって、Vlogに使いやすい" data-en="It makes framing videos easier, perfect for vlogging">動画撮影の構図確認が楽になって、Vlogに使いやすい</div>
+            <div class="review-card" data-ja="MagSafeで付けられるから、持ち歩きアイテムとして自然" data-en="Because it attaches with MagSafe, it feels natural to carry every day">MagSafeで付けられるから、持ち歩きアイテムとして自然</div>
         </div>
         <div class="review-track reverse">
-            <div class="review-card">自撮りがもっとしやすくなったから、もっとたくさん使いこなしたいーー</div>
-            <div class="review-card">もっと早くにЯETRAに出会いたかった。このガジェット、もう手放せない！！</div>
-            <div class="review-card">iPhoneの背中にジャストサイズで軽いので、ずっと装着したままでも疲れないのが良い！！</div>
-            <div class="review-card">見た目も名前も可愛いので、友達にオススメしたくなっちゃう、プレゼントにも良いかも</div>
-            <div class="review-card">インフルエンサーやVlogにもこのサイズ感は相性が良い</div>
-            <div class="review-card">自撮りがもっとしやすくなったから、もっとたくさん使いこなしたいーー</div>
-            <div class="review-card">もっと早くにЯETRAに出会いたかった。このガジェット、もう手放せない！！</div>
-            <div class="review-card">iPhoneの背中にジャストサイズで軽いので、ずっと装着したままでも疲れないのが良い！！</div>
+            <div class="review-card" data-ja="撮る前にちゃんと確認できるだけで、仕上がりが全然変わる" data-en="Just being able to check before shooting completely changes the result">撮る前にちゃんと確認できるだけで、仕上がりが全然変わる</div>
+            <div class="review-card" data-ja="外カメの高画質をリアルタイムで見られるのが本当に便利" data-en="Seeing the high-quality rear camera feed in real time is genuinely useful">外カメの高画質をリアルタイムで見られるのが本当に便利</div>
+            <div class="review-card" data-ja="薄くて軽いから、ケース感覚で一緒に持てる" data-en="It is thin and light enough to carry like a case">薄くて軽いから、ケース感覚で一緒に持てる</div>
+            <div class="review-card" data-ja="友達に見せた瞬間、なにそれ欲しいって言われた" data-en="The moment I showed my friends, they asked what it was and wanted one">友達に見せた瞬間、なにそれ欲しいって言われた</div>
+            <div class="review-card" data-ja="セルフィーもライブ配信も、背面カメラ前提に変わりそう" data-en="Selfies and livestreams may shift to a rear-camera-first experience">セルフィーもライブ配信も、背面カメラ前提に変わりそう</div>
+            <div class="review-card" data-ja="撮る前にちゃんと確認できるだけで、仕上がりが全然変わる" data-en="Just being able to check before shooting completely changes the result">撮る前にちゃんと確認できるだけで、仕上がりが全然変わる</div>
+            <div class="review-card" data-ja="外カメの高画質をリアルタイムで見られるのが本当に便利" data-en="Seeing the high-quality rear camera feed in real time is genuinely useful">外カメの高画質をリアルタイムで見られるのが本当に便利</div>
+            <div class="review-card" data-ja="薄くて軽いから、ケース感覚で一緒に持てる" data-en="It is thin and light enough to carry like a case">薄くて軽いから、ケース感覚で一緒に持てる</div>
+            <div class="review-card" data-ja="友達に見せた瞬間、なにそれ欲しいって言われた" data-en="The moment I showed my friends, they asked what it was and wanted one">友達に見せた瞬間、なにそれ欲しいって言われた</div>
+            <div class="review-card" data-ja="セルフィーもライブ配信も、背面カメラ前提に変わりそう" data-en="Selfies and livestreams may shift to a rear-camera-first experience">セルフィーもライブ配信も、背面カメラ前提に変わりそう</div>
         </div>
     </section>
     
     <section class="how" id="how">
         <div class="how-copy reveal">
-            <div class="section-label">How It Works</div>
-            <h2>使い方はカンタン<br>3ステップ</h2>
+            <div class="section-label" data-ja="How It Works" data-en="How It Works">How It Works</div>
+            <h2 data-ja="使い方はカンタン<br>3ステップ" data-en="Simple to use<br>in 3 steps">使い方はカンタン<br>3ステップ</h2>
             
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
                     <div>
-                        <h3>装着</h3>
-                        <p>ЯETRAをiPhoneの背面に装着し、USB-Cで接続します。</p>
+                        <h3 data-ja="装着" data-en="Attach">装着</h3>
+                        <p data-ja="ЯETRAをiPhoneの背面に装着し、USB-Cで接続します。" data-en="Attach ЯETRA to the back of your iPhone and connect with USB-C.">ЯETRAをiPhoneの背面に装着し、USB-Cで接続します。</p>
                     </div>
                 </div>
                 
                 <div class="step">
                     <div class="step-number">2</div>
                     <div>
-                        <h3>表示</h3>
-                        <p>ЯETRAの画面に背面カメラの映像をリアルタイムで表示。</p>
+                        <h3 data-ja="表示" data-en="Preview">表示</h3>
+                        <p data-ja="ЯETRAの画面に背面カメラの映像をリアルタイムで表示。" data-en="Display the rear camera feed on ЯETRA in real time.">ЯETRAの画面に背面カメラの映像をリアルタイムで表示。</p>
                     </div>
                 </div>
                 
                 <div class="step">
                     <div class="step-number">3</div>
                     <div>
-                        <h3>撮影</h3>
-                        <p>いつも通りの操作で、綺麗な写真や動画を撮影できます。</p>
+                        <h3 data-ja="撮影" data-en="Shoot">撮影</h3>
+                        <p data-ja="いつも通りの操作で、綺麗な写真や動画を撮影できます。" data-en="Shoot beautiful photos and videos with the familiar iPhone experience.">いつも通りの操作で、綺麗な写真や動画を撮影できます。</p>
                     </div>
                 </div>
             </div>
@@ -1073,12 +1053,12 @@ footer a {
         <div class="premium-copy reveal">
             <h2>ЯETRA</h2>
             <div class="premium-tag">Premium Model</div>
-            <p>
+            <p data-ja="撮る体験を、アートに変える。すべてにこだわった、プレミアムモデル。" data-en="Turn the shooting experience into art. A premium model crafted with attention to every detail.">
                 撮る体験を、アートに変える。
                 すべてにこだわった、プレミアムモデル。
             </p>
             <div class="cta">
-                <a class="primary" href="#buy">購入する</a>
+                <a class="primary" href="#buy" data-ja="購入する" data-en="Buy">購入する</a>
             </div>
         </div>
     </section>
@@ -1087,38 +1067,38 @@ footer a {
         <div class="products">
             <div class="product">
                 <div class="product-device black"></div>
-                <div class="product-name">マットブラック</div>
-                <div class="product-sub">アルミニウム</div>
+                <div class="product-name" data-ja="マットブラック" data-en="Matte Black">マットブラック</div>
+                <div class="product-sub" data-ja="アルミニウム" data-en="Aluminum">アルミニウム</div>
             </div>
             <div class="product">
                 <div class="product-device gray"></div>
-                <div class="product-name">スペースグレー</div>
-                <div class="product-sub">アルミニウム</div>
+                <div class="product-name" data-ja="スペースグレー" data-en="Space Gray">スペースグレー</div>
+                <div class="product-sub" data-ja="アルミニウム" data-en="Aluminum">アルミニウム</div>
             </div>
             <div class="product">
                 <div class="product-device silver"></div>
-                <div class="product-name">シルバー</div>
-                <div class="product-sub">アルミニウム</div>
+                <div class="product-name" data-ja="シルバー" data-en="Silver">シルバー</div>
+                <div class="product-sub" data-ja="アルミニウム" data-en="Aluminum">アルミニウム</div>
             </div>
             <div class="product">
                 <div class="product-device navy"></div>
-                <div class="product-name">ネイビーブルー</div>
-                <div class="product-sub">アルミニウム</div>
+                <div class="product-name" data-ja="ネイビーブルー" data-en="Navy Blue">ネイビーブルー</div>
+                <div class="product-sub" data-ja="アルミニウム" data-en="Aluminum">アルミニウム</div>
             </div>
             <div class="product">
                 <div class="product-device green"></div>
-                <div class="product-name">グリーン</div>
-                <div class="product-sub">アルミニウム</div>
+                <div class="product-name" data-ja="グリーン" data-en="Green">グリーン</div>
+                <div class="product-sub" data-ja="アルミニウム" data-en="Aluminum">アルミニウム</div>
             </div>
             <div class="product">
                 <div class="product-device pink"></div>
-                <div class="product-name">ローズピンク</div>
-                <div class="product-sub">アルミニウム</div>
+                <div class="product-name" data-ja="ローズピンク" data-en="Rose Pink">ローズピンク</div>
+                <div class="product-sub" data-ja="アルミニウム" data-en="Aluminum">アルミニウム</div>
             </div>
             <div class="product">
                 <div class="product-device white"></div>
-                <div class="product-name">スノーホワイト</div>
-                <div class="product-sub">アルミニウム</div>
+                <div class="product-name" data-ja="スノーホワイト" data-en="Snow White">スノーホワイト</div>
+                <div class="product-sub" data-ja="アルミニウム" data-en="Aluminum">アルミニウム</div>
             </div>
         </div>
     </section>
@@ -1126,12 +1106,12 @@ footer a {
     <section class="color" id="colors">
         <div class="color-copy reveal">
             <h2>ЯETRA <span class="color-word">Color</span></h2>
-            <p>
+            <p data-ja="もっと自由に、もっと自分らしく。ポップで楽しいカラーバリエーション。" data-en="More freedom, more personality. A playful lineup of colorful variations.">
                 もっと自由に、もっと自分らしく。
                 ポップで楽しいカラーバリエーション。
             </p>
             <div class="cta">
-                <a class="primary" href="#color-products">カラーを見る</a>
+                <a class="primary" href="#color-products" data-ja="カラーを見る" data-en="View Colors">カラーを見る</a>
             </div>
         </div>
         
@@ -1142,51 +1122,51 @@ footer a {
         <div class="products">
             <div class="product">
                 <div class="product-device baby-pink"></div>
-                <div class="product-name">ベビーピンク</div>
-                <div class="product-sub">ソフトマット</div>
+                <div class="product-name" data-ja="ベビーピンク" data-en="Baby Pink">ベビーピンク</div>
+                <div class="product-sub" data-ja="ソフトマット" data-en="Soft Matte">ソフトマット</div>
             </div>
             <div class="product">
                 <div class="product-device baby-blue"></div>
-                <div class="product-name">ベビーブルー</div>
-                <div class="product-sub">ソフトマット</div>
+                <div class="product-name" data-ja="ベビーブルー" data-en="Baby Blue">ベビーブルー</div>
+                <div class="product-sub" data-ja="ソフトマット" data-en="Soft Matte">ソフトマット</div>
             </div>
             <div class="product">
                 <div class="product-device baby-mint"></div>
-                <div class="product-name">ベビーミント</div>
-                <div class="product-sub">ソフトマット</div>
+                <div class="product-name" data-ja="ベビーミント" data-en="Baby Mint">ベビーミント</div>
+                <div class="product-sub" data-ja="ソフトマット" data-en="Soft Matte">ソフトマット</div>
             </div>
             <div class="product">
                 <div class="product-device baby-lavender"></div>
-                <div class="product-name">ベビーラベンダー</div>
-                <div class="product-sub">ソフトマット</div>
+                <div class="product-name" data-ja="ベビーラベンダー" data-en="Baby Lavender">ベビーラベンダー</div>
+                <div class="product-sub" data-ja="ソフトマット" data-en="Soft Matte">ソフトマット</div>
             </div>
             <div class="product">
                 <div class="product-device baby-yellow"></div>
-                <div class="product-name">ベビーイエロー</div>
-                <div class="product-sub">ソフトマット</div>
+                <div class="product-name" data-ja="ベビーイエロー" data-en="Baby Yellow">ベビーイエロー</div>
+                <div class="product-sub" data-ja="ソフトマット" data-en="Soft Matte">ソフトマット</div>
             </div>
             <div class="product">
                 <div class="product-device baby-peach"></div>
-                <div class="product-name">ベビーピーチ</div>
-                <div class="product-sub">ソフトマット</div>
+                <div class="product-name" data-ja="ベビーピーチ" data-en="Baby Peach">ベビーピーチ</div>
+                <div class="product-sub" data-ja="ソフトマット" data-en="Soft Matte">ソフトマット</div>
             </div>
             <div class="product">
                 <div class="product-device baby-cream"></div>
-                <div class="product-name">ベビークリーム</div>
-                <div class="product-sub">ソフトマット</div>
+                <div class="product-name" data-ja="ベビークリーム" data-en="Baby Cream">ベビークリーム</div>
+                <div class="product-sub" data-ja="ソフトマット" data-en="Soft Matte">ソフトマット</div>
             </div>
         </div>
     </section>
     
     <section class="final">
         <div class="reveal">
-            <h2>撮り方が変わると、<br>写真はもっと自由になる。</h2>
-            <p>
+            <h2 data-ja="撮り方が変わると、<br>写真はもっと自由になる。" data-en="When the way you shoot changes,<br>photos become more free.">撮り方が変わると、<br>写真はもっと自由になる。</h2>
+            <p data-ja="ЯETRAは、iPhone撮影の当たり前を変えるために生まれました。<br>これからは背面カメラが、もっと自然に使える。" data-en="ЯETRA was created to change what iPhone shooting can be.<br>From now on, the rear camera can feel more natural.">
                 ЯETRAは、iPhone撮影の当たり前を変えるために生まれました。<br>
                 これからは背面カメラが、もっと自然に使える。
             </p>
             <div class="cta" style="justify-content:center;">
-                <a class="primary" href="#buy">購入する</a>
+                <a class="primary" href="#buy" data-ja="購入する" data-en="Buy">購入する</a>
             </div>
         </div>
     </section>
@@ -1194,8 +1174,8 @@ footer a {
 
 <footer>
     <div class="footer-brand">
-        <span>© 2026　ЯETRA TOKYO</span>
-        <img src="assets/logos/retra.logo_10.png" alt="ЯETRA social icon">
+        <img class="footer-brand-logo" src="assets/logos/retra.logo_2.png" alt="ЯETRA TOKYO logo">
+        <img class="footer-instagram" src="assets/logos/instagram.logo.png" alt="Instagram">
     </div>
     <div class="footer-links">
         <a href="support.html">Support</a>
@@ -1207,6 +1187,27 @@ footer a {
 </footer>
 
 <script>
+const applyLanguage = (lang) => {
+    document.documentElement.lang = lang;
+    localStorage.setItem("retraLanguage", lang);
+
+    document.querySelectorAll("[data-ja][data-en]").forEach((element) => {
+        element.innerHTML = element.dataset[lang];
+    });
+
+    document.querySelectorAll("[data-lang-select]").forEach((button) => {
+        button.classList.toggle("active", button.dataset.langSelect === lang);
+    });
+};
+
+document.querySelectorAll("[data-lang-select]").forEach((button) => {
+    button.addEventListener("click", () => {
+        applyLanguage(button.dataset.langSelect);
+    });
+});
+
+applyLanguage(localStorage.getItem("retraLanguage") || "ja");
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
